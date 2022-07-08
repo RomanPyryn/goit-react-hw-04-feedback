@@ -2,6 +2,7 @@ import { Component } from "react";
 import Statistics from "./Statistics";
 import Notification from "./Notification"
 import FeedbackOptions from "./FeedbackOptions";
+import { Container } from "./Feedback.styled"
 
 class Feedback extends Component {
     static defaultProps = {};
@@ -16,7 +17,7 @@ class Feedback extends Component {
 
     hendleAddFeedback = (e) => {
         const option = e.currentTarget.value;
-        this.setState({ [option]: this.state[option] + 1})
+        this.setState({ [option]: this.state[option] + 1 })
     }
 
     countTotalFeedback = () => {
@@ -33,7 +34,7 @@ class Feedback extends Component {
 
     render() {
       return (
-            <section>
+            <Container>
                 <div>
                   <h2>Please leave feedback</h2>
                   
@@ -45,7 +46,7 @@ class Feedback extends Component {
                   <h2>Statistic</h2> 
                   {this.countTotalFeedback() > 0 ? <Statistics good={this.state.good} neutral={this.state.neutral} bad={this.state.bad} total={this.countTotalFeedback()} positivePercentage={this.countPositiveFeedbackPercentage()}/> : <Notification message="There is no feedback"/> }
                 </div>
-            </section>);
+            </Container>);
   }
 };
 
