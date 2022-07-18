@@ -17,15 +17,11 @@ class Feedback extends Component {
     };
 
     countTotalFeedback = () => {
-        let total = this.state.good + this.state.neutral + this.state.bad;
-
-        return total;
+        return this.state.good + this.state.neutral + this.state.bad;
     };
 
     countPositiveFeedbackPercentage = () => {
-        let percentage = Math.round(this.state.good / (this.state.good + this.state.neutral + this.state.bad) * 100);
-
-        return percentage;
+        return Math.round(this.state.good / (this.state.good + this.state.neutral + this.state.bad) * 100);
     };
 
     render() {
