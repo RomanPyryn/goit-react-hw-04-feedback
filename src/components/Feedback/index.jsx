@@ -12,7 +12,7 @@ class Feedback extends Component {
     };
 
     hendleAddFeedback = (e) => {
-        const option = e.currentTarget.value;
+        const option = e.currentTarget.name;
         this.setState({ [option]: this.state[option] + 1 })
     };
 
