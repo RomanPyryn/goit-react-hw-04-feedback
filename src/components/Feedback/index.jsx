@@ -11,8 +11,6 @@ export default function Feedback() {
 
     const hendleAddFeedback = (e) => {
         const option = e.currentTarget.name;
-        
-        console.log(good);
 
         if (option === 'good') {
             setGood(prevGood => prevGood + 1 )
@@ -37,7 +35,7 @@ export default function Feedback() {
               <h2>Please leave feedback</h2>
               
               <FeedbackOptions
-                  options={["good", "neutral", "bad"]}
+                  options={Object.keys({ good, neutral, bad })}
                   onLeaveFeedback={hendleAddFeedback}/>
             </div>
             <div>
